@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMTP Debugger</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <header class="sidebar-header">
+                <h2>Inbox</h2>
+                <div class="status-indicator online"></div>
+            </header>
+            <div id="email-list" class="email-list">
+                <div class="empty-state">Waiting for emails...</div>
+            </div>
+        </aside>
+        <main class="main-content">
+            <div id="email-detail" class="email-detail hidden">
+                <header class="email-header">
+                    <h1 id="detail-subject">Subject</h1>
+                    <div class="email-meta">
+                        <span id="detail-from" class="sender">From: sender@example.com</span>
+                        <span id="detail-time" class="time">10:00 AM</span>
+                    </div>
+                    <div class="detail-recipients">
+                        To: <span id="detail-to">recipient@example.com</span>
+                    </div>
+                </header>
+                <div class="email-body-container">
+                    <pre id="detail-body">Email content goes here...</pre>
+                </div>
+                <div class="raw-toggle">
+                   <button id="toggle-headers-btn">Toggle Raw Headers</button>
+                   <pre id="detail-headers" class="hidden"></pre>
+                </div>
+            </div>
+            <div id="no-selection" class="no-selection">
+                <p>Select an email to view details</p>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
